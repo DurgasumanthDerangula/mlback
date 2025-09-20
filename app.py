@@ -6,7 +6,7 @@ import os
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000","https://healthfrontend3.vercel.app"https://healthback-2-ffs2.onrender.com"])
+CORS(app, origins=["http://localhost:3000","https://healthfrontend3.vercel.app","https://healthback-2-ffs2.onrender.com"])
 
 # Load ML model
 model_path = "model/score_model.pkl"
