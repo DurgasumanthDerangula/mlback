@@ -6,7 +6,7 @@ import os
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000","http://localhost:5002"])
+CORS(app, origins=["http://localhost:3000","https://healthfrontend3.vercel.app"https://healthback-2-ffs2.onrender.com"])
 
 # Load ML model
 model_path = "model/score_model.pkl"
@@ -23,7 +23,7 @@ def predict_score():
             return jsonify({"error": "userId is required"}), 400
 
         # Call external API to get last 5 scores
-        api_url = f"http://localhost:5002/api/scores/history/{user_id}"
+        api_url = f"https://healthback-2-ffs2.onrender.com/api/scores/history/{user_id}"
         response = requests.get(api_url)
 
         if response.status_code != 200:
